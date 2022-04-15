@@ -1,70 +1,36 @@
-#[![PyPI](https://img.shields.io/pypi/v/napalm-ruckus-fastiron.svg)](https://pypi.python.org/pypi/napalm-ruckus-fastiron)
-[![PyPI](https://img.shields.io/pypi/dm/napalm-ruckus-fastiron.svg)](https://pypi.python.org/pypi/napalm-ruckus-fastiron)
 
-NAPALM (Network Automation and Programmability Abstraction Layer with Multivendor support) is a Python library that implements a set of functions to interact with different router vendor devices using a unified API.
+Soui - Utilitaire pour visualiser les mac adresses sous différent format et obtenir des informations du constructeur.
 
 Current methods supported
 =======
+usage: soui [-h] [-v] [-u] [-c] [-b] [-a] [-s] mac
 
-Configuration Support Matrix
------------------------------------
-- load_replace_candidate()
-- load_merge_candidate()
-- compare_config()
-- rollback()
+Affichage des informations contructeur, en fonction de l'adresse mac.
 
-Getters Support Matrix
------------------------------------
-- get_arp_table()
-- get_config()
-- get_environment()
-- get_facts()
-- get_interfaces()
-- get_interfaces_counters()
-- get_interfaces_ip()
-- get_lldp_neighbors()
-- get_lldp_neighbors_detail()
-- get_mac_address_table()
-- get_network_instance()
-- get_ntp_peers()
-- get_ntp_servers()
-- get_ntp_stats()
-- get_users()
-- IsAlive()
+positional arguments:
+  mac            Spécifier l'adresse mac à rechercher.
+
+options:
+  -h, --help     show this help message and exit
+  -v, --version  show program's version number and exit
+  -u, --unix     Affiche l'adresse mac au format unix.
+  -c, --cisco    Affiche l'adresse mac au format cisco.
+  -b, --bare     Affiche l'adresse mac au format bare.
+  -a, --all      Affiche tous les formats d'adresse mac.
+  -s, --sobre    Affiche l'adresse mac seule.
 
 Currently Testing [not publicly available]
 =======
-- load_template()
-- get_optics()
-- get_bgp_congfig()
-- get_bgp_neighbors()
-- get_bgp_neighbors_detail()
-- get_route_to()
-- get_snmp information()
-- ping()
-- tracerroute()
+- soui -h
 
 Roapmapped
 =======
-- get_ipv6_neighbors_table
+- Ajout de nouveau format
 
 Requirements
 =======
-- Netmiko v3.4.0
-- FastIron v8.0.30
-
-Netmiko methods
-=======
-- send_config()
-- config_mode()
-- check_config_mode()
-- exit_config_mode()
-- enable()
-- exit_enable()
-- clear_buffer()
-- prompt()
+netaddr
 
 Authors
 =======
- * Jesús Mendez ([mendezj@staticoverride.us](mailto:mendezj@staticoverride.us))
  * Dominique Robert ([drobert@free.fr](mailto:drobert@free.fr))
