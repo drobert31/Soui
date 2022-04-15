@@ -2,13 +2,13 @@
 from setuptools import find_packages, setup
 
 __author__ = 'Dominique Robert <drobert@free.fr>'
-from napalm_ruckus_fastiron.version import __version__
+from soui.version import __version__
 
 with open("requirements.txt", "r") as fs:
     reqs = [r for r in fs.read().splitlines()]
 
 setup(
-    name="napalm-ruckus-fastiron",
+    name="Soui",
     # la version du code
     version=__version__,
 
@@ -19,7 +19,7 @@ setup(
     author_email="drobert@free.fr",
 
     # Une description courte
-    description="Network Automation and Programmability Abstraction Layer with Multivendor support",
+    description="Utilitaire pour visualiser les mac adresses sous différent format et obtenir des informations du constructeur.",
 
     # Une description longue, sera affichée pour présenter la lib
     # Généralement on dump le README ici
@@ -32,7 +32,7 @@ setup(
          'Programming Language :: Python :: 3.7',
         'Operating System :: POSIX :: Linux',
     ],
-    url="https://github.com/drobert31/napalm-ruckus-fastiron",
+    url="https://github.com/drobert31/Soui",
     # A fournir uniquement si votre licence n'est pas listée dans "classifiers"
     # ce qui est notre cas
     license="MIT",
