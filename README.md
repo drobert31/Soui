@@ -3,7 +3,7 @@
 - Utilitaire pour visualiser les mac adresses sous différent format et obtenir des informations du constructeur.
 
 ## Les différentes options :
-usage: soui.py [-h] [-v] [-u] [-p] [-w] [-c] [-b] [-a] [-s] mac
+<strong> usage : </strong> soui.py [-h] [-v] [-u] [-p] [-w] [-c] [-b] [-a] [-s] mac
 
 Affichage des informations contructeur, en fonction de l'adresse mac.
 
@@ -29,26 +29,22 @@ options:
 ## Utilisation :
 - Liste les différents formats
 <code>
-soui.py -a 0012ff</br>
----------------------------------------------</br>
-Format Unix     : 00:12:ff:00:00:00</br>
----------------------------------------------</br>
-Format Cisco    : 0012.ff00.0000</br>
----------------------------------------------</br>
-Format HP       : 0012FF-000000</br>
----------------------------------------------</br>
-Format Huawei   : 0012-FF00-0000</br>
----------------------------------------------</br>
-Format Bare     : 0012FF000000</br>
----------------------------------------------</br>
-Format Normal   : 00-12-FF-00-00-00</br>
----------------------------------------------</br>
+soui.py -a 0012ff
 </code>
+
+| Format | Mac |
+| :------------ |   :---:       |
+| Format Unix     : | 00:12:ff:00:00:00 |
+| Format Cisco    : | 0012.ff00.0000 |
+| Format HP       : | 0012FF-000000 |
+| Format Huawei   : | 0012-FF00-0000 |
+| Format Bare     : | 0012FF000000 |
+| Format Normal   : | 00-12-FF-00-00-00 |
 
 - Affiche un format et les informations du constructeur.
 
 <code>
-soui.py -c 0012ff</br>
+soui.py -c 0012ff
 ---------------------------------------------
 Format Cisco    : 0012.ff00.0000
 Cette @mac appartient à : Lely Industries N.V.
