@@ -1,10 +1,8 @@
 
 # Soui
-=======
 - Utilitaire pour visualiser les mac adresses sous différent format et obtenir des informations du constructeur.
 
-## Current methods supported
-=======
+## Les différentes options :
 usage: soui.py [-h] [-v] [-u] [-p] [-w] [-c] [-b] [-a] [-s] mac
 
 Affichage des informations contructeur, en fonction de l'adresse mac.
@@ -23,8 +21,12 @@ options:
   -a, --all      Affiche tous les formats d'adresse mac.
   -s, --sobre    Affiche l'adresse mac seule.
 
-Utilisation :
-=======
+<details>
+    <summary>
+        Utilisation
+    </summary>
+
+## Utilisation :
 - Liste les différents formats
 soui.py -a 0012ff
 ---------------------------------------------
@@ -53,15 +55,13 @@ Son adresse postale est :
 	NL
 
 ---------------------------------------------
+</details>
 
-Roapmapped
-=======
+## Roapmapped
 - Ajout de nouveau format
 
-Requirements
-=======
+## Requirements
 netaddr
 
-Authors
-=======
+## Authors
  * Dominique Robert ([drobert@free.fr](mailto:drobert@free.fr))
