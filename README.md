@@ -1,9 +1,9 @@
 
-Soui
+# Soui
 =======
 - Utilitaire pour visualiser les mac adresses sous différent format et obtenir des informations du constructeur.
 
-Current methods supported
+## Current methods supported
 =======
 usage: soui.py [-h] [-v] [-u] [-p] [-w] [-c] [-b] [-a] [-s] mac
 
