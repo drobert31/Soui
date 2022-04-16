@@ -45,18 +45,16 @@ options:
 - Affiche un format et les informations du constructeur.
 
 <strong>soui.py -c 0012ff</strong>
-
+```
 Format Cisco    : 0012.ff00.0000
 
 Cette @mac appartient à : Lely Industries N.V.
 
 Son adresse postale est :
-+ Weverskade 110
-+ Maassluis  Zuid-Holland  3147PA
-+ NL
-
----
-
+  Weverskade 110
+  Maassluis  Zuid-Holland  3147PA
+  NL
+```
 </details>
 
 ## Roapmapped
@@ -69,10 +67,11 @@ netaddr
 ***
 A little intro about the installation.
 ```
-$ git clone https://example.com
-$ cd ../path/to/the/file
-$ npm install
-$ npm start
+$ git clone https://github.com/drobert31/Soui.git
+$ cd Soui
+$ python setup.py install
+$ cp soui/soui.py /usr/sbin/soui
+$ chmod +x /usr/sbin/soui
 ```
 
 ## Authors
