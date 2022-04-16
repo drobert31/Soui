@@ -45,16 +45,17 @@ soui.py -a 0012ff
 
 <code>
 soui.py -c 0012ff
----------------------------------------------
+
 Format Cisco    : 0012.ff00.0000
+
 Cette @mac appartient à : Lely Industries N.V.
 
 Son adresse postale est :
-	Weverskade 110
-	Maassluis  Zuid-Holland  3147PA
-	NL
++ Weverskade 110
++ Maassluis  Zuid-Holland  3147PA
++ NL
 
----------------------------------------------
+---
 </code>
 </details>
 
