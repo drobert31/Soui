@@ -28,9 +28,8 @@ options:
 
 ## Utilisation :
 - Liste les différents formats
-<code>
-soui.py -a 0012ff
-</code>
+
+<strong>soui.py -a 0012ff</strong>
 
 | Format | Mac |
 | :------------ |   :---:       |
@@ -43,8 +42,7 @@ soui.py -a 0012ff
 
 - Affiche un format et les informations du constructeur.
 
-<code>
-soui.py -c 0012ff
+<strong>soui.py -c 0012ff</strong>
 
 Format Cisco    : 0012.ff00.0000
 
@@ -56,7 +54,7 @@ Son adresse postale est :
 + NL
 
 ---
-</code>
+
 </details>
 
 ## Roapmapped
