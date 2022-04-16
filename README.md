@@ -1,5 +1,7 @@
 
-Soui - Utilitaire pour visualiser les mac adresses sous différent format et obtenir des informations du constructeur.
+Soui
+=======
+- Utilitaire pour visualiser les mac adresses sous différent format et obtenir des informations du constructeur.
 
 Current methods supported
 =======
