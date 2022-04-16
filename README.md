@@ -72,8 +72,8 @@ Un petit tuto pour l'installation.
 $ git clone https://github.com/drobert31/Soui.git
 $ cd Soui
 $ python setup.py install
-$ cp soui/soui.py /usr/sbin/soui
-$ chmod +x /usr/sbin/soui
+$ sudo cp soui/soui.py /usr/sbin/soui
+$ sudo chmod +x /usr/sbin/soui
 ```
 L'utilisation de sudo est nécessaire si l'utilisateur n'a pas les droits adéquates.
 
