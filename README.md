@@ -1,6 +1,8 @@
 
 # Soui
-- Utilitaire pour visualiser les mac adresses sous différent format et obtenir des informations du constructeur.
+- Utilitaire pour vérifier le format d'une adresse mac,
+- Visualiser les mac adresses sous différent format,
+- Obtenir des informations du constructeur.
 
 ## Les différentes options :
 <strong> usage : </strong> soui.py [-h] [-v] [-u] [-p] [-w] [-c] [-b] [-a] [-s] mac
@@ -62,6 +64,16 @@ Son adresse postale est :
 
 ## Requirements
 netaddr
+
+## Installation
+***
+A little intro about the installation.
+```
+$ git clone https://example.com
+$ cd ../path/to/the/file
+$ npm install
+$ npm start
+```
 
 ## Authors
  * Dominique Robert ([drobert@free.fr](mailto:drobert@free.fr))
