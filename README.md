@@ -23,9 +23,36 @@ options:
   -a, --all      Affiche tous les formats d'adresse mac.
   -s, --sobre    Affiche l'adresse mac seule.
 
-Currently Testing [not publicly available]
+Utilisation :
 =======
-- soui -h
+- Liste les différents formats
+soui.py -a 0012ff
+---------------------------------------------
+Format Unix     : 00:12:ff:00:00:00
+---------------------------------------------
+Format Cisco    : 0012.ff00.0000
+---------------------------------------------
+Format HP       : 0012FF-000000
+---------------------------------------------
+Format Huawei   : 0012-FF00-0000
+---------------------------------------------
+Format Bare     : 0012FF000000
+---------------------------------------------
+Format Normal   : 00-12-FF-00-00-00
+---------------------------------------------
+
+- Affiche un format et les informations du constructeur.
+soui.py -c 0012ff
+---------------------------------------------
+Format Cisco    : 0012.ff00.0000
+Cette @mac appartient à : Lely Industries N.V.
+
+Son adresse postale est :
+	Weverskade 110
+	Maassluis  Zuid-Holland  3147PA
+	NL
+
+---------------------------------------------
 
 Roapmapped
 =======
