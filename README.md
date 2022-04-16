@@ -23,12 +23,12 @@ options:
 
 <details>
     <summary>
-        ### Utilisation
+        <strong> Utilisation : </strong>
     </summary>
 
 ## Utilisation :
 - Liste les différents formats
-
+<code>
 soui.py -a 0012ff
 ---------------------------------------------
 Format Unix     : 00:12:ff:00:00:00
@@ -43,6 +43,7 @@ Format Bare     : 0012FF000000
 ---------------------------------------------
 Format Normal   : 00-12-FF-00-00-00
 ---------------------------------------------
+</code>
 
 - Affiche un format et les informations du constructeur.
 
