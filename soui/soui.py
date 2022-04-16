@@ -86,6 +86,7 @@ def process_args(oui):
     """
     Print organisation et adresse
     """
+    print()
     print(Fore.BLUE + "Cette @mac appartient à : " + Style.BRIGHT + Fore.GREEN + oui.registration().org + "\n" + Style.NORMAL)
     print(Fore.BLUE + "Son adresse postale est : " + Style.NORMAL)
     for add in oui.registration().address:
