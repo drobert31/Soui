@@ -61,11 +61,11 @@ Son adresse postale est :
 - Ajout de nouveau format
 
 ## Requirements
-netaddr
+![netaddr](https://pypi.org/project/netaddr/)
 
 ## Installation
 ***
-A little intro about the installation.
+Un petit tuto pour l'installation.
 ```
 $ git clone https://github.com/drobert31/Soui.git
 $ cd Soui
@@ -73,6 +73,8 @@ $ python setup.py install
 $ cp soui/soui.py /usr/sbin/soui
 $ chmod +x /usr/sbin/soui
 ```
+![](https://fr.depositphotos.com/51090961/stock-illustration-attention-sign-icon-exclamation-mark.html)
+L'utilisation de sudo est nécessaire si l'utilisateur n'a pas les droits adéquates.
 
 ## Authors
  * Dominique Robert ([drobert@free.fr](mailto:drobert@free.fr))
