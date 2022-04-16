@@ -73,7 +73,7 @@ $ python setup.py install
 $ cp soui/soui.py /usr/sbin/soui
 $ chmod +x /usr/sbin/soui
 ```
-![sudo](https://fr.depositphotos.com/51090961/stock-illustration-attention-sign-icon-exclamation-mark.html)
+<img src="https://fr.depositphotos.com/51090961/stock-illustration-attention-sign-icon-exclamation-mark.html">
 L'utilisation de sudo est nécessaire si l'utilisateur n'a pas les droits adéquates.
 
 ## Authors
