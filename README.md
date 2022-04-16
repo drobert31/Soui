@@ -10,6 +10,7 @@
 Affichage des informations contructeur, en fonction de l'adresse mac.
 
 positional arguments:
+
   mac            Spécifier l'adresse mac à rechercher.
 
 options:
