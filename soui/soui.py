@@ -52,6 +52,7 @@ http://google.github.io/styleguide/pyguide.html
 __version__ = "1.0.0"
 
 from netaddr import *
+import regex
 from termcolor import colored
 from colorama import Back, Fore, Style, deinit, init
 
@@ -63,19 +64,23 @@ def test_mac(user_input):
     """
     try:
         # Bloc à essayer
-        mac = EUI(user_input)
+        l_input = regex.sub("[^a-zA-Z,0-9]","", user_input)
+        l_input = l_input.ljust(12, '0')
+        #print(f"MAC : {l_input}")
+        mac = EUI(l_input)
         oui = mac.oui
-        return oui
+        return mac
     except (NotRegisteredError, AddrFormatError):
-        print(Style.BRIGHT + Fore.RED + 'Erreur adresse Mac non enregistrée !')
+        # Erreur adresse Mac non enregistrée !
         # Bloc qui sera exécuté en cas d'erreur
         oui = ""
         return oui
     else:
-        print(Style.BRIGHT + Fore.RED + 'Erreur adresse Mac incorrecte !')
+        # Erreur adresse Mac incorrecte !
         # Bloc qui sera exécuté en cas d'erreur
         oui = ""
         return oui
+
 
 def process_args(oui):
     """
@@ -86,11 +91,33 @@ def process_args(oui):
     for add in oui.registration().address:
         print("\t" + add)
 
-def afficheFormat(format_mac):
+    print(Style.RESET_ALL)
+
+def afficheFormat(format_mac, Mac):
     print("---" *15)
     tmp = f"{format_mac:15} : "
-    print(Fore.BLUE + tmp + Style.BRIGHT + Fore.GREEN + str(mac) + Style.NORMAL)
-    print("---" *15)
+    print(Fore.BLUE + tmp + Style.BRIGHT + Fore.GREEN + Mac + Style.RESET_ALL)
+
+def macFormat(macF):
+    mac_options = {
+        'CISCO': mac_cisco,
+        'UNIXE': mac_unix_expanded,
+        'BARE': mac_bare,
+        'NORMAL': mac_eui48,
+        'UNIX': mac_unix,
+        'PGSQL': mac_pgsql
+    }
+    if macF.upper() in mac_options:
+        return mac_options[macF.upper()]
+    else:
+        return mac_unix_expanded
+
+def getFormatMac(mac, FormatMac='unix'):
+    """Format la mac adresse avec le format passé en argument."""
+    _mac = EUI(mac)
+    _mac.dialect = macFormat(FormatMac)
+
+    return _mac
 
 class mac_custom(mac_unix): pass
 
@@ -112,10 +139,16 @@ if __name__ == "__main__":
         "-v", "--version", action="version", version="\n%(prog)s version : " + __version__ + "\n"
     )
     parser.add_argument(
-        "-u", "--unix", action='store_true', help="Affiche l'adresse mac au format unix."
+        "-u", "--unix", action='store_true', help="Affiche l'adresse mac au format Unix."
     )
     parser.add_argument(
-        "-c", "--cisco", action='store_true', help="Affiche l'adresse mac au format cisco."
+        "-p", "--hp", action='store_true', help="Affiche l'adresse mac au format HP."
+    )
+    parser.add_argument(
+        "-w", "--huawei", action='store_true', help="Affiche l'adresse mac au format Huawei."
+    )
+    parser.add_argument(
+        "-c", "--cisco", action='store_true', help="Affiche l'adresse mac au format Cisco."
     )
     parser.add_argument(
         "-b", "--bare", action='store_true', help="Affiche l'adresse mac au format bare."
@@ -139,47 +172,56 @@ if __name__ == "__main__":
         #print("Attention, @Mac incorrecte !")
         sys.exit()
 
-    mac = EUI(args.mac)
+    mac = oui
+    # Formats Hp / Huawei
+    f_bare = str(getFormatMac(mac, 'bare'))
+    f_hp = f_bare[0:6] + "-" + f_bare[6:]
+    f_huawei = f_bare[0:4] + "-" + f_bare[4:8] + "-" + f_bare[8:]
 
     if args.sobre:
         if args.unix:
             mac.dialect = mac_unix_expanded
+            print("{}".format(mac))
         elif args.cisco:
             mac.dialect = mac_cisco
+            print("{}".format(mac))
         elif args.bare:
             mac.dialect = mac_bare
+            print("{}".format(mac))
+        elif args.hp:
+            print(f_hp)
+        elif args.huawei:
+            print(f_huawei)
 
-        print("{}".format(mac))
     elif args.all:
-        mac.dialect = mac_unix_expanded
-        afficheFormat("Format Unix")
-        mac.dialect = mac_cisco
-        afficheFormat("Format Cisco")
-        mac.dialect = mac_bare
-        afficheFormat("Format Bare")
-        mac = EUI(args.mac)
-        afficheFormat("Format Normal")
+        afficheFormat("Format Unix", str(getFormatMac(mac, "unixe")))
+        afficheFormat("Format Cisco", str(getFormatMac(mac, "cisco")))
+        afficheFormat("Format HP", f_hp)
+        afficheFormat("Format Huawei", f_huawei)
+        afficheFormat("Format Bare", str(getFormatMac(mac, "bare")))
+        afficheFormat("Format Normal",  str(getFormatMac(mac, "normal")))
+        print("---" *15)
     elif args.unix:
-        mac.dialect = mac_unix_expanded
-        _form = "Format Unix"
-        afficheFormat(_form)
-        process_args(oui)
+        afficheFormat("Format Cisco", str(getFormatMac(mac, "unixe")))
+        process_args(mac.oui)
+        print("---" *15)
+    elif args.hp:
+        afficheFormat("Format HP", f_hp)
+        process_args(mac.oui)
+        print("---" *15)
+    elif args.huawei:
+        afficheFormat("Format Huawei", f_huawei)
+        process_args(mac.oui)
         print("---" *15)
     elif args.cisco:
-        mac.dialect = mac_cisco
-        _form = "Format Cisco"
-        afficheFormat(_form)
-        process_args(oui)
+        afficheFormat("Format Cisco", str(getFormatMac(mac, "cisco")))
+        process_args(mac.oui)
         print("---" *15)
     elif args.bare:
-        mac.dialect = mac_bare
-        _form = "Format Bare"
-        afficheFormat(_form)
+        afficheFormat("Format Cisco", str(getFormatMac(mac, "bare")))
         process_args(oui)
         print("---" *15)
     else:
-        mac = EUI(args.mac)
-        _form = "Format Normal"
-        afficheFormat(_form)
-        process_args(oui)
+        afficheFormat("Format Normal",  str(getFormatMac(mac, "normal")))
+        process_args(mac.oui)
         print("---" *15)
