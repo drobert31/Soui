@@ -58,7 +58,8 @@ Son adresse postale est :
 </details>
 
 ## Roapmapped
-- Ajout de nouveau format
+- Ajout de nouveau format,
+- Sauver dans un fichier csv.
 
 ## Requirements
 [netaddr](https://pypi.org/project/netaddr/)
@@ -73,7 +74,6 @@ $ python setup.py install
 $ cp soui/soui.py /usr/sbin/soui
 $ chmod +x /usr/sbin/soui
 ```
-<img src="https://fr.depositphotos.com/51090961/stock-illustration-attention-sign-icon-exclamation-mark.html">
 L'utilisation de sudo est nécessaire si l'utilisateur n'a pas les droits adéquates.
 
 ## Authors
