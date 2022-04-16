@@ -63,9 +63,6 @@ Son adresse postale est :
 
 ## Requirements
 [netaddr](https://pypi.org/project/netaddr/)
-<a href="https://pypi.org/project/netaddr/" target="_blank" rel="noopener noreferrer" >
-  netaddr
-</a>
 
 ## Installation
 ***
