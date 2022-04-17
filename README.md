@@ -75,7 +75,7 @@ $ python setup.py install
 $ sudo cp soui/soui.py /usr/sbin/soui
 $ sudo chmod +x /usr/sbin/soui
 ```
-L'utilisation de sudo est nécessaire si l'utilisateur n'a pas les droits adéquates.
+L'utilisation de sudo est nécessaire si l'utilisateur n'a pas les droits adéquats.
 
 ## Authors
  * Dominique Robert ([drobert@free.fr](mailto:drobert@free.fr))
