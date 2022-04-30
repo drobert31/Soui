@@ -14,7 +14,6 @@
 
 """soui package."""
 import pkg_resources
-from napalm_ruckus_fastiron.FastIron import FastIronDriver
 
 try:
     __version__ = pkg_resources.get_distribution('Soui').version

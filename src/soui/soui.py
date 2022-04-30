@@ -127,7 +127,7 @@ class mac_custom(mac_unix): pass
     mac = EUI('00-1B-77-49-54-FD', dialect=mac_custom)
 """
 
-if __name__ == "__main__":
+def main():
     import argparse
 
     init()
@@ -226,3 +226,6 @@ if __name__ == "__main__":
         afficheFormat("Format Normal",  str(getFormatMac(mac, "normal")))
         process_args(mac.oui)
         print("---" *15)
+
+if __name__ == "__main__":
+    main()

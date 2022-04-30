@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+src/Soui.egg-info/PKG-INFO
+src/Soui.egg-info/SOURCES.txt
+src/Soui.egg-info/dependency_links.txt
+src/Soui.egg-info/entry_points.txt
+src/Soui.egg-info/requires.txt
+src/Soui.egg-info/top_level.txt
+src/soui/__init__.py
+src/soui/soui.py
+src/soui/version.py
