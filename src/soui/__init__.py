@@ -13,11 +13,11 @@
 # the License.
 
 """soui package."""
-import pkg_resources
+#import pkg_resources
 
-try:
-    __version__ = pkg_resources.get_distribution('Soui').version
-except pkg_resources.DistributionNotFound:
-    __version__ = "Not installed"
+#try:
+#    __version__ = pkg_resources.get_distribution('Soui').version
+#except pkg_resources.DistributionNotFound:
+#    __version__ = "Not installed"
 
-__all__ = ["Soui"]
+#__all__ = ["Soui"]
