@@ -2,7 +2,7 @@
 from setuptools import find_packages, setup
 
 __author__ = 'Dominique Robert <drobert@free.fr>'
-from soui.version import __version__
+from soui.soui import __version__
 
 with open("requirements.txt", "r") as fs:
     reqs = [r for r in fs.read().splitlines()]
@@ -42,7 +42,7 @@ setup(
     install_requires=reqs,
     entry_points={
          'console_scripts': [
-                             'Soui=soui.soui:main',
+                             'Soui=src.soui.soui:main',
                         ]
                 }
 )

@@ -1,2 +1,2 @@
 [console_scripts]
-Soui = soui.soui:main
+Soui = src.soui.soui:main

@@ -49,7 +49,11 @@ Todo:
 http://google.github.io/styleguide/pyguide.html
 
 """
-__version__ = "1.0.0"
+
+"""
+Cette Variable Permet de donner la version du Module :
+"""
+__version__ = "1.1.0"
 
 from netaddr import *
 import regex
@@ -57,6 +61,7 @@ from termcolor import colored
 from colorama import Back, Fore, Style, deinit, init
 
 import sys
+
 
 def test_mac(user_input):
     """
