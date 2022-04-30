@@ -49,8 +49,10 @@ Todo:
 http://google.github.io/styleguide/pyguide.html
 
 """
-#from .version import
 
+"""
+Cette Variable Permet de donner la version du Module :
+"""
 __version__ = "1.1.0"
 
 from netaddr import *

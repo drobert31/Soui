@@ -11,4 +11,3 @@ src/Soui.egg-info/requires.txt
 src/Soui.egg-info/top_level.txt
 src/soui/__init__.py
 src/soui/soui.py
-src/soui/version.py
