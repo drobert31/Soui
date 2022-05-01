@@ -36,10 +36,15 @@ setup(
     # A fournir uniquement si votre licence n'est pas listée dans "classifiers"
     # ce qui est notre cas
     license="MIT",
+    platforms='any',
 
     packages=find_packages(),
     include_package_data=True,
     install_requires=reqs,
+
+    package_dir={'': 'src'},
+    py_modules=['soui'],
+
     entry_points={
          'console_scripts': [
                              'Soui=src.soui.soui:main',

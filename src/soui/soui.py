@@ -53,7 +53,7 @@ http://google.github.io/styleguide/pyguide.html
 """
 Cette Variable Permet de donner la version du Module :
 """
-__version__ = "1.1.0"
+__version__ = "1.2.0"
 
 from netaddr import *
 import regex
@@ -137,15 +137,21 @@ def main():
 
     init()
 
+    descr = "Affichage des informations contructeur, en fonction de l'adresse mac."
+    h1 = {"fr": "Affiche l'adresse mac au format Unix.", "en": "Return mac addresse with Unix format."}
+
     # Set up command line arguments
     parser = argparse.ArgumentParser(
-        description="Affichage des informations contructeur, en fonction de l'adresse mac."
+        description=descr, add_help=False
     )
     parser.add_argument(
-        "-v", "--version", action="version", version="\n%(prog)s version : " + __version__ + "\n"
+        "-v", "--version", action="version", version="\n%(prog)s version : " + __version__ + "\n", help="Affiche la version du programme"
     )
     parser.add_argument(
-        "-u", "--unix", action='store_true', help="Affiche l'adresse mac au format Unix."
+        "-h", "--aide", action="help", help="Affiche l'aide du programme"
+    )
+    parser.add_argument(
+        "-u", "--unix", action='store_true', help=h1["fr"]
     )
     parser.add_argument(
         "-p", "--hp", action='store_true', help="Affiche l'adresse mac au format HP."
@@ -175,7 +181,8 @@ def main():
     oui = test_mac(args.mac)
     # Si n exite pas => Arret
     if oui == "":
-        #print("Attention, @Mac incorrecte !")
+        print("\n" + descr)
+        print("Veuillez entrer une @mac correcte !")
         sys.exit()
 
     mac = oui
@@ -186,18 +193,21 @@ def main():
 
     if args.sobre:
         if args.unix:
-            mac.dialect = mac_unix_expanded
-            print("{}".format(mac))
+            #mac.dialect = mac_unix_expanded
+            #print("{}".format(mac))
+            print(str(getFormatMac(mac, "unixe")))
         elif args.cisco:
-            mac.dialect = mac_cisco
-            print("{}".format(mac))
+            # mac.dialect = mac_cisco
+            print(str(getFormatMac(mac, "cisco")))
         elif args.bare:
-            mac.dialect = mac_bare
-            print("{}".format(mac))
+            # mac.dialect = mac_bare
+            print(str(getFormatMac(mac, "bare")))
         elif args.hp:
             print(f_hp)
         elif args.huawei:
             print(f_huawei)
+        else:
+            print(str(getFormatMac(mac, "unixe")))
 
     elif args.all:
         afficheFormat("Format Unix", str(getFormatMac(mac, "unixe")))

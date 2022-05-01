@@ -6,7 +6,7 @@ Home-page: https://github.com/drobert31/Soui
 Author: Dominique Robert
 Author-email: drobert@free.fr
 License: MIT
-Platform: UNKNOWN
+Platform: any
 Classifier: Topic :: Utilities
 Classifier: Programming Language :: Python
 Classifier: Programming Language :: Python :: 3.7
